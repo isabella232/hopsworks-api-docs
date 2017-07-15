@@ -58,7 +58,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'Hops Documentation'
+project = 'Hopsworks REST API'
 copyright = u'2017, www.hops.io.'
 
 # The version info for the project you're documenting, acts as replacement for
