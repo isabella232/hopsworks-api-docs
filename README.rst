@@ -1,18 +1,34 @@
-Template
-========
+Hopsworks API Docs
+==================
 
-$project is a next-generation distribution of Apache Hadoop.
+This is the documentation of the REST-api of the Hopsworks platform.
 
-Build the documentation
-------------------------
+Building the documentation
+--------------------------
 
-   # Install sphinx
+   // Get the source
 
-   pip install sphinx sphinx-autobuild recommonmark sphinx_rtd_theme jupyter_sphinx_theme
+   git clone https://github.com/hopshadoop/hopsworks-api-docs
+   cd hopsworks-api-docs
+   
+   // Create and enter a virtualenv
+   virtualenv --python=python2.7 venv
+   source venv/bin/activate
 
+   //Install the dependencies
+   pip install -r requirements.txt
+
+   //Optional: if you want to compile to pdf, you'll need texlive
+   sudo apt install texlive texlive-latex-extras latexmk
+   
+   # Build the docs
    cd docs
+   make htlm //html-files will be output in the _build/html dir
 
-   make latexpdf
+   make pdflatex //pdf will be output in the _build/latex dir
+   
+   // Exit the virtualenv
+   deactivate
 
 Contribute
 ----------
