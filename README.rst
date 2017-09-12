@@ -1,40 +1,65 @@
 Hopsworks API Docs
 ==================
 
-This is the documentation of the REST-api of the Hopsworks platform.
+This repository contains sources for the documentation of the Hopsworks REST API.
+
+Dependencies
+------------
+
+Building these docs requires having python2.7 and virtualenv installed.
+
+::
+
+  sudo apt install python2.7 virtualenv
+
+If you want to compile the documents to pdf, you will also need texlive.
+
+::
+  
+  sudo apt install texlive texlive-latex-extras latexmk
 
 Building the documentation
 --------------------------
 
-   // Get the source
+Clone this project
 
-   git clone https://github.com/hopshadoop/hopsworks-api-docs
-   cd hopsworks-api-docs
+:: 
+
+  $ git clone https://github.com/hopshadoop/hopsworks-api-docs
+  $ cd hopsworks-api-docs
+  
+Create and enter a virtualenv
+
+::
    
-   // Create and enter a virtualenv
-   virtualenv --python=python2.7 venv
-   source venv/bin/activate
+   $ virtualenv --python=python2.7 venv
+   $ source venv/bin/activate
 
-   //Install the dependencies
-   pip install -r requirements.txt
+Install dependencies
 
-   //Optional: if you want to compile to pdf, you'll need texlive
-   sudo apt install texlive texlive-latex-extras latexmk
+::
+
+   (venv)$ pip install -r requirements.txt
+
+Build the docs
+
+::
+
+   (venv)$ cd docs
+   (venv)$ make htlm // output: _build/html
+   (venv)$ make pdflatex // output: _build/latex
    
-   # Build the docs
-   cd docs
-   make htlm //html-files will be output in the _build/html dir
+Exit the virtualenv
 
-   make pdflatex //pdf will be output in the _build/latex dir
-   
-   // Exit the virtualenv
-   deactivate
+::
+
+  (venv)$ deactivate
 
 Contribute
 ----------
 
-- Issue Tracker: github.com/hopshadoop/$project/issues
-- Source Code: github.com/hopshadoop/
+- Issue Tracker: https://github.com/hopshadoop/hopsworks-api-docs/issues
+- Source Code: https://github.com/hopshadoop/hopsworks-api-docs
 
 Support
 -------
